@@ -2,44 +2,86 @@
 
 data:
   source: "yfinance"
-  start_date: "2010-01-01"
+  start_date: "2015-01-01"
   end_date: "2024-12-31"
   frequency: "1d"
   
-  # Asset Universe - S&P 500 Sector ETFs + Major Stocks
+  # Expanded Universe - Sector ETFs + Related Stocks
   assets:
-    - SPY    # S&P 500 (benchmark + regime detection)
-    - XLF    # Financials
-    - XLE    # Energy
-    - XLK    # Technology
-    - XLV    # Healthcare
-    - XLI    # Industrials
-    - XLP    # Consumer Staples
-    - XLU    # Utilities
-    - XLB    # Materials
-    - XLY    # Consumer Discretionary
-    - GLD    # Gold
-    - TLT    # Long-term Treasuries
-    - EEM    # Emerging Markets
-    - EFA    # Developed Markets ex-US
-    - IYR    # Real Estate
-    - GDX    # Gold Miners
-    - SLV    # Silver
-    - USO    # Oil
-    - XBI    # Biotech
-    - SMH    # Semiconductors
-    - KRE    # Regional Banks
-    - XHB    # Homebuilders
-    - XRT    # Retail
-    - XOP    # Oil & Gas Exploration
-    - ARKK   # Innovation (post-2014)
-    - QQQ    # Nasdaq 100
-    - IWM    # Russell 2000
-    - DIA    # Dow Jones
-    - VGK    # Europe
-    - FXI    # China
+    # Benchmark
+    - SPY
+    
+    # Sector ETFs
+    - XLF
+    - XLE
+    - XLK
+    - XLV
+    - XLI
+    - XLP
+    - XLU
+    - XLB
+    - XLY
+    
+    # Country/Region ETFs (great for pairs)
+    - EFA
+    - VGK
+    - EWG    # Germany
+    - EWU    # UK
+    - EEM
+    - FXI
+    
+    # Commodity Related (great for pairs)
+    - GLD
+    - GDX    # Gold miners vs Gold = classic pair
+    - SLV
+    - USO
+    - XOP
+    
+    # Bond Related
+    - TLT
+    - IEF    # 7-10yr Treasury
+    
+    # Tech Stocks (same sector = better cointegration)
+    - MSFT
+    - GOOGL
+    - META
+    - AAPL
+    - AMZN
+    
+    # Financial Stocks
+    - JPM
+    - GS
+    - MS
+    - BAC
+    - C
+    
+    # Energy Stocks
+    - XOM
+    - CVX
+    - COP
+    - EOG
+    
+    # Consumer
+    - KO
+    - PEP    # KO vs PEP = classic pair
+    - PG
+    - CL     # PG vs CL = classic pair
+    - WMT
+    - COST   # WMT vs COST = classic pair
+    
+    # Pharma
+    - JNJ
+    - PFE
+    - MRK
+    - ABBV
+    
+    # Industrials
+    - CAT
+    - DE     # CAT vs DE = classic pair
+    - HON
+    - MMM
 
 project:
   name: "Regime-Aware Statistical Arbitrage Engine"
   version: "1.0.0"
-  author: "Falgun Kishorbhai Gadhiya"
+  author: "gadhiyafalgun-arch"
